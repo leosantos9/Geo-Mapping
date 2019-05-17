@@ -52,17 +52,17 @@ d3.json(API_plates, function (geoJson) {
 
 function Color(magnitude) {
     if (magnitude > 5) {
-        return 'red'
+        return '#bd0026'
     } else if (magnitude > 4) {
-        return 'darkorange'
+        return '#f03b20'
     } else if (magnitude > 3) {
-        return 'white'
+        return '#fd8d3c'
     } else if (magnitude > 2) {
-        return 'yellow'
+        return '#feb24c'
     } else if (magnitude > 1) {
-        return 'darkgreen'
+        return '#fed976'
     } else {
-        return 'lightgreen'
+        return '#ffffb2'
     }
 };
 
@@ -72,7 +72,7 @@ function createMap() {
     var streetMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 15,
-        id: 'mapbox.streets',
+        id: 'mapbox.light',
         accessToken: 'pk.eyJ1Ijoib2xhd3JlbmNlNzk5IiwiYSI6ImNqZXZvcTBmdDBuY3oycXFqZThzbjc5djYifQ.-ChNrBxEIvInNJWiHX5pXg'
     });
 
@@ -86,7 +86,7 @@ function createMap() {
 
 
     var baseLayers = {
-        "Street": streetMap,
+        "Light": streetMap,
         "Satellite": satellite
     };
 
